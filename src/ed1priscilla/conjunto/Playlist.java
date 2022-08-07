@@ -123,6 +123,7 @@ public class Playlist {
     public Playlist uniao(Playlist playlist2) {
         Elo q, p1 = prim, p2 = playlist2.prim, ult = null;
         Playlist uniao = new Playlist();
+        uniao.setTitulo("União - Todas as músicas");
 
         while ( (p1 != null) || (p2 != null) )
         {
@@ -155,6 +156,7 @@ public class Playlist {
     public Playlist intersecao(Playlist playlist2) {
         Elo q, p1 = prim, p2 = playlist2.prim, ult = null;
         Playlist inter = new Playlist();
+        inter.setTitulo("Interseção - Músicas em Comum");
 
         while ((p1 != null) && (p2 != null)) {
             if (p1.dado.compareTo(p2.dado) < 0) {
@@ -193,19 +195,21 @@ public class Playlist {
     /* Imprime todas as musicas da playlist */
     public void imprime() {
         Elo p;
+
+        System.out.println("Playlist: "+ titulo);
         for(p = prim; p != null; p = p.prox)
             System.out.print(p.dado);
         System.out.println();
     }
 
     /* Retorna o complementar do conjunto (playlist). */
-    public Playlist complementar(Playlist universo) {
+    public Playlist complementar(Playlist playlist2) {
 
         Elo prim1 = this.prim;
-        Elo prim2 = universo.prim;
+        Elo prim2 = playlist2.prim;
 
         Playlist comp = new Playlist(); // para guardar o conjunto complementar
-
+        comp.setTitulo("Complementar");
         // loop que itera até o final do conjunto universo
         while (prim2 != null) {
             // se o elemento do conjunto universo for igual ao do conjunto 1...
@@ -261,6 +265,7 @@ public class Playlist {
         Elo aux;
 
         Playlist diferenca = new Playlist();
+        setTitulo("Diferença");
 
         while (prim1 != null) {
             if (prim1.dado.compareTo(prim2.dado) == 0) {
@@ -304,6 +309,4 @@ public class Playlist {
         // falso caso uma das listas esteja vazia e a outra não
         return false;
     }
-
-
 }

@@ -2,7 +2,6 @@ package ed1priscilla.filaprioridade;
 
 public class TesteProcessos {
     public static void main(String[] args) {
-        // int n = 3;
         FilaProcessos ob = new FilaProcessos();
 
         ob.enfileirar(1, 10, 2);

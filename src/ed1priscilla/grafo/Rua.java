@@ -1,7 +1,5 @@
 package ed1priscilla.grafo;
 
-import ed1priscilla.graph3.Vertex;
-
 public class Rua { // aresta - edge
     private final String id; // id da rua
     private final Ponto source; // origem

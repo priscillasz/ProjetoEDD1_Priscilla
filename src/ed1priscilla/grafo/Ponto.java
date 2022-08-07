@@ -1,7 +1,5 @@
 package ed1priscilla.grafo;
 
-import ed1priscilla.graph3.Vertex;
-
 public class Ponto {
     final private String id; // id do Ponto
     final private String name; // nome do Ponto
