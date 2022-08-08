@@ -10,14 +10,14 @@ public class TesteConjunto {
         playlist2.setTitulo("Playlist 2");
 
         Musica musica1 = new Musica("Number One Fan", 0001, "MUNA", "Saves The World", 2019);
-        Musica musica2 = new Musica("Idiota", 0002, "Jão", "Pirata", 2020);
+        Musica musica2 = new Musica("Overrated", 0002, "Strawberry Girls", "American Graffiti", 2015);
         Musica musica3 = new Musica("As It Was", 0003, "Harry Styles", "As It Was", 2022);
         Musica musica4 = new Musica("Catch", 0004, "Allie X", "Collxtion I", 2015);
-        Musica musica5 = new Musica("Summertime Gladness", 0005, "Dance Gavin Dance", "Summertime Gladness", 2017);
+        Musica musica5 = new Musica("Idiota", 0005, "Jão", "Pirata", 2020);
         Musica musica8  = new Musica("Die Another Day", 0005, "Dance Gavin Dance", "Jackpot Juicer", 2022);
         // músicas com mesmo título e id diferentes
-        Musica musica6 = new Musica("Feels Bad Man", 0006, "Dance Gavin Dance", "Jackpot Juicer", 2022);
-        Musica musica7 = new Musica("Feels Bad Man", 0007, "Dance Gavin Dance", "Jackpot Juicer", 2022);
+        Musica musica6 = new Musica("Fantasy", 0006, "Eternity Forever", "Fantasy", 2017);
+        Musica musica7 = new Musica("Fantasy", 0007, "Mariah Carey", "Daydream", 1995);
 
         // insere músicas na playlist 1
         playlist1.insere(musica1);
@@ -65,6 +65,5 @@ public class TesteConjunto {
             System.out.println("Playlists iguais");
         else
             System.out.println("Playlists diferentes");
-
     }
 }

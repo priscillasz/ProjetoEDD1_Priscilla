@@ -265,7 +265,7 @@ public class Playlist {
         Elo aux;
 
         Playlist diferenca = new Playlist();
-        setTitulo("Diferença");
+        diferenca.setTitulo("Diferença");
 
         while (prim1 != null) {
             if (prim1.dado.compareTo(prim2.dado) == 0) {

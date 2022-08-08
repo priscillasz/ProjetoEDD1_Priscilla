@@ -8,7 +8,7 @@ public class TesteGrafos {
         List<Rua> edges = new ArrayList<>();
 
         for (int i = 0; i < 11; i++) {
-            Ponto location = new Ponto("Rua_" + i, "Rua_" + i);
+            Ponto location = new Ponto("Ponto_" + i, "Ponto_" + i);
             nodes.add(location);
         }
 
@@ -25,12 +25,13 @@ public class TesteGrafos {
         addLane("Rua_10", 9, 10, 40, nodes, edges);
         addLane("Rua_11", 1, 10, 600, nodes, edges);
 
-        /* Testa o menor caminho para chegar da Rua 1 a Rua 10 */
+        /* Testa o menor caminho para chegar do Ponto 0 ao Ponto 10 */
         Grafo grafo = new Grafo(nodes, edges);
         AlgoritmoDijkstra dijkstra = new AlgoritmoDijkstra(grafo);
         dijkstra.executar(nodes.get(0));
         LinkedList<Ponto> caminho = dijkstra.getCaminho(nodes.get(10));
 
+        System.out.println("\nMenor caminho para chegar ao Ponto 10 partindo do Ponto 0: ");
         for (Ponto ponto : caminho) {
             System.out.println(ponto);
         }
