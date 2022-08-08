@@ -7,11 +7,13 @@ public class TesteGrafos {
         List<Ponto> nodes = new ArrayList<>();
         List<Rua> edges = new ArrayList<>();
 
+        /* cria 11 pontos diferentes e os adiciona a lista de pontos */
         for (int i = 0; i < 11; i++) {
             Ponto location = new Ponto("Ponto_" + i, "Ponto_" + i);
             nodes.add(location);
         }
 
+        /* adiciona ruas com pontos de origem, pontos de destino e peso */
         addLane("Rua_0", 0, 1, 85, nodes, edges);
         addLane("Rua_1", 0, 2, 217, nodes, edges);
         addLane("Rua_2", 0, 4, 173, nodes, edges);
@@ -27,8 +29,11 @@ public class TesteGrafos {
 
         /* Testa o menor caminho para chegar do Ponto 0 ao Ponto 10 */
         Grafo grafo = new Grafo(nodes, edges);
+
         AlgoritmoDijkstra dijkstra = new AlgoritmoDijkstra(grafo);
+
         dijkstra.executar(nodes.get(0));
+
         LinkedList<Ponto> caminho = dijkstra.getCaminho(nodes.get(10));
 
         System.out.println("\nMenor caminho para chegar ao Ponto 10 partindo do Ponto 0: ");
@@ -39,6 +44,7 @@ public class TesteGrafos {
 
     public static void addLane(String laneId, int sourceLocNo, int destLocNo, int duration, List<Ponto> nodes, List<Rua> edges) {
         Rua lane = new Rua(laneId,nodes.get(sourceLocNo), nodes.get(destLocNo), duration);
+        /* adiciona as ruas à lista de ruas (arestas) */
         edges.add(lane);
     }
 }

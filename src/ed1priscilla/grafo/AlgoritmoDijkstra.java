@@ -61,7 +61,7 @@ public class AlgoritmoDijkstra {
         throw new RuntimeException("Should not happen");
     }
 
-
+    /**/
     private List<Ponto> getNeighbors(Ponto node) {
         List<Ponto> neighbors = new ArrayList<>();
         for (Rua edge : edges) {
@@ -87,10 +87,12 @@ public class AlgoritmoDijkstra {
         return minimum;
     }
 
+    /* verifica se um ponto já foi resolvido */
     private boolean isSettled(Ponto ponto) {
         return settledNodes.contains(ponto);
     }
 
+    /**/
     private int getMenorDistancia(Ponto destination) {
         Integer d = distance.get(destination);
         if (d == null) {
@@ -100,14 +102,11 @@ public class AlgoritmoDijkstra {
         }
     }
 
-    /*
-     * This method returns the path from the source to the selected target and
-     * NULL if no path exists
-     */
+    /* Retorna o caminho da origem até o destino selecionado. Retorna null caso o caminho não exista. */
     public LinkedList<Ponto> getCaminho(Ponto target) {
         LinkedList<Ponto> caminho = new LinkedList<>();
         Ponto step = target;
-        // check if a path exists
+       // verifica a existência do caminho
         if (predecessors.get(step) == null) {
             return null;
         }
@@ -116,7 +115,8 @@ public class AlgoritmoDijkstra {
             step = predecessors.get(step);
             caminho.add(step);
         }
-        // Put it into the correct order
+
+        // coloca na ordem correta
         Collections.reverse(caminho);
         return caminho;
     }
